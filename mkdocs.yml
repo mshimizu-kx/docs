@@ -12,8 +12,6 @@ extra_javascript:
   - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML'
   - 'https://code.jquery.com/jquery-3.1.1.min.js'
   - 'https://tracker.mrpfd.com/tracker.js'
-  # - 'scripts/googleanalytics.js'
-  # - 'https://use.fontawesome.com/3dbf29ed12.js'
   - 'https://use.fontawesome.com/releases/v5.2.0/js/all.js'
   # theme.js modifies HTML to prepare for prism.js
   - 'scripts/theme.js'
