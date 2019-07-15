@@ -1,7 +1,7 @@
 /*
  * Custom script for code.kx.com/v2
  * Author: stephen@kx.com
- * Version: 2019.06.15
+ * Version: 2019.07.15 SEARCH
  * https://gist.github.com/wpscholar/4637176#file-jquery-external-links-new-window-js-L4
  */
 $(function() {
@@ -13,14 +13,14 @@ $(function() {
 		}
 	});
     // Search engine call from Search box
-	var kxSearch = 'https://code.kx.com/v2/search?query='; // >>> reverse-proxy on Nginx at code.kx.com
-	var gsSearch = "https://www.google.com/search?q=site%3Acode.kx.com/v2/+";
+	var kxSearch = 'https://code.kx.com/preview/search2?query='; // >>> reverse-proxy on Nginx at code.kx.com
+	// var gsSearch = "https://www.google.com/search?q=site%3Acode.kx.com/v2/+";
 	var srchHandler =function( evt ) {
 		if( evt.which===13 ) {
 			var qry = $("[data-md-component=query]").val().trim();
 			if( qry !== "" ) {
 				// var url = ( qry.indexOf(' ') >= 0 ? gsSearch : kxSearch ) + encodeURIComponent(qry);
-				var url = sendToG(qry) ? gsSearch + gsQuery(qry) : kxSearch + encodeURIComponent(qry);
+				var url = kxSearch + encodeURIComponent(qry);
 				console.log(url);
 				window.location = url;
 			};
