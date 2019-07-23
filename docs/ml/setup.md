@@ -1,9 +1,11 @@
 ---
 title: Set up your machine-learning environment
-keywords: Docker, embedPy, Jupyter, ml, machine learning, Python
+description: How to set up an environment in which to work on Machine Learning within kdb+ and q
+keywords: anaconda, conda, docker, embedpy, jupyter, ml, machine learning, python
 ---
-
 # <i class="fas fa-share-alt"></i> Setting up your machine-learning environment
+
+
 
 There are three methods available to set up an environment in which to work on Machine Learning within kdb+/q: 
 
@@ -108,5 +110,5 @@ Allows Jupyter notebooks to be used within a Docker container.
 ## Do it yourself
 
 1.  Install [kdb+](../learn/install/index.md) 
-2.  Install [embedPy](embedpy/)
-3.  Install [JupyterQ](jupyterq/)
+2.  Install [embedPy](embedpy/index.md)
+3.  Install [JupyterQ](jupyterq/index.md)

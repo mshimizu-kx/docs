@@ -1,16 +1,16 @@
 ---
+title: embedPy
+description: embedPy allows the kdb+ interpreter to manipulate Python objects and call Python functions.
 keywords: embedpy, interface, kdb+, python
 ---
-
 # <i class="fab fa-python"></i> embedPy
-<!-- # ![Python](../interfaces/img/python.png) embedPy -->
+
 
 
 <div class="fusion" markdown="1">
-<i class="fab fa-superpowers"></i> [Fusion for kdb+](../../interfaces/fusion)
+<i class="fab fa-superpowers"></i> [Fusion for kdb+](../../interfaces/fusion.md)
 </div>
 
-Allows the kdb+ interpreter to manipulate Python objects and call Python functions.
 
 
 ## Requirements

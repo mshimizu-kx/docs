@@ -1,9 +1,11 @@
 ---
+title: Using R with kdb+
+description: How to enable R to connect to kdb+ and extract data; embed R inside q and invoke R routines; enable q to connect to a remote instance of R via TCP/IP and invoke R routines remotely; and enable q to load the R maths library and invoke R math routines locally.
 keywords: interface, kdb+, library, q, r
 hero: <i class="fab fa-superpowers"></i> Fusion for Kdb+
 ---
+# <i class="fab fa-r-project"></i> Using R with kdb+
 
-# ![R](img/r.png) Using R with kdb+
 
 
 ## Introduction
@@ -73,7 +75,7 @@ Considering the potential size of the data, it is probably more likely that the 
 ### rkdb: R client for kdb+
 
 <div class="fusion" markdown="1">
-<i class="fab fa-superpowers"></i> [Fusion for kdb+](../fusion)
+<i class="fab fa-superpowers"></i> [Fusion for kdb+](fusion.md)
 </div>
 
 Connects R to a kdb+ database to extract partially analyzed data into R 

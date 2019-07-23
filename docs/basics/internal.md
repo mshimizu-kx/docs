@@ -1,8 +1,10 @@
 ---
+title: Internal functions
+description: The operator ! with a negative integer as left-argument calls an internal function.
 keywords: bang, functions, internal, kdb+, q
 ---
-
 # Internal functions
+
 
 
 
@@ -92,7 +94,7 @@ q)
 ## `-7!x` (`hcount`)
 
 <i class="far fa-hand-point-right"></i> 
-[`hcount`](../ref/hcount.md)
+[`hcount`](../ref/handles.md#hcount)
 
 
 ## `-8!x` (to bytes)

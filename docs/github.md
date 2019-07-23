@@ -1,8 +1,11 @@
 ---
+title: Repositories on GitHub
+description: An index of q and kdb+ repositories on GitHub.
+author: Stephen Taylor
 keywords: code, github, kdb+, q, repo, repository
 ---
-
 # <i class="fab fa-github"></i> Repositories on GitHub
+
 
 
 <i class="far fa-hand-point-right"></i> [Interfaces](interfaces/index.md) to feeds, services and other languages  
@@ -76,29 +79,29 @@ about new repositories.</div>
 <tr>
 	<td class="nowrap">[nlp](https://github.com/awilson-kx/nlp)</td>
 	<td>
-		demonstration notebook for [Natural-language processing](../ml/nlp/)
-		[<i class="fas fa-share-alt"></i>](../ml/ "Machine learning")
+		demonstration notebook for [Natural-language processing](ml/nlp/index.md)
+		[<i class="fas fa-share-alt"></i>](ml/ "Machine learning")
 	</td>
 </tr>
 <tr>
 	<td class="nowrap">[notebooks](https://github.com/awilson-kx/notebooks)</td>
 	<td>
-		demonstration notebooks for [embedPy](../ml/embedpy/)
-		[<i class="fas fa-share-alt"></i>](../ml/ "Machine learning")
+		demonstration notebooks for [embedPy](ml/embedpy/index.md)
+		[<i class="fas fa-share-alt"></i>](ml/index.md "Machine learning")
 	</td>
 </tr>
 <tr>
 	<td class="nowrap">[pyq](https://github.com/KxSystems/pyq)</td>
 	<td>
 		calling Python from q
-		[<i class="fab fa-superpowers"></i>](../interfaces/fusion/ "Fusion interfaces")
+		[<i class="fab fa-superpowers"></i>](interfaces/fusion.md "Fusion interfaces")
 	</td>
 </tr>
 <tr>
 	<td class="nowrap">[rkdb](https://github.com/KxSystems/rkdb)</td>
 	<td>
 		R client for q
-		[<i class="fab fa-superpowers"></i>](../interfaces/fusion/ "Fusion interfaces")
+		[<i class="fab fa-superpowers"></i>](interfaces/fusion.md "Fusion interfaces")
 	</td>
 </tr>
 </table>

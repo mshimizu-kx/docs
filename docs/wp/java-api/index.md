@@ -1,10 +1,12 @@
 ---
+title: Java API for kdb+
+description: This paper illustrates how the Java API for kdb+ can be used to enable a Java program to interact with a kdb+ process. It first explores the API itself – how it is structured, and how it might be included in a development project. Examples are then provided for core use cases for the API in a standard setup. Particular consideration is given to how the API facilitates subscription and publication to a kdb+ tickerplant process, a core component of any kdb+ tick-capture system.
 author: Peter Lyness
 date: May 2018
 keywords: API, Java, interface, connection
 ---
-
 # <i class="fab fa-java"></i> Java API for kdb+
+
 
 
 
@@ -897,7 +899,7 @@ the same as that covered here.
 ### Extracting the table schema
 
 Typical subscriber processes are required to make an initial subscription request to the tickerplant in order to receive data. 
-See the [publish and subscribe](../../kb/publish-subscribe) Knowledge Base article for details. 
+See the [publish and subscribe](../../kb/publish-subscribe.md) Knowledge Base article for details. 
 This request involves calling the `.u.sub` function with two
 parameters. The first parameter is the table name and the second is a
 list of symbols for subscription. (Specifying a backtick in any of the

@@ -1,8 +1,11 @@
 ---
+title: Site news – code.kx.com 
+description: News of changes to the Kx documentation site
+author: Stephen Taylor
 keywords: blog, kdb+, news, q, site
 ---
+# <i class="fas fa-newspaper"></i> Site news
 
-# <i class="far fa-newspaper"></i> Site news
 
 
 ## V1
@@ -45,7 +48,7 @@ Announcements to mark our 25th birthday:
 -   [Kdb+ on Google Cloud Platform](../cloud/gcpm/index.md)
 -   [Version 3.6](../releases/ChangesIn3.6.md)
 -   [Anaconda](../ml/index.md)
--   [Natural Language Processing toolkit](../ml/nlp/)
+-   [Natural Language Processing toolkit](../ml/nlp/index.md)
 -   [Docker and Notebooks](../ml/setup.md#docker-command)
 -   [JupyterQ FAQ](../ml/jupyterq/index.md#frequently-asked-questions)
 

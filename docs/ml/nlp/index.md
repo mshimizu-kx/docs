@@ -1,10 +1,12 @@
 ---
+title: Natural-language processing
+description: The natural-language processing (NLP) library can be used to answer a variety of questions about unstructured text data, as well as facilitating open-ended exploration.
 author: Fionnuala Carr
 date: August 2018
-keywords: algorithm, analysis, bisecting, centroid, cluster, clustering, comparison, corpora, corpus, document, email, feature, file, k-mean, kdbplus, learning, machine, machine learning, mbox, message, ml, nlp, parse, parsing, q, sentiment, similarity, string function, vector
+keywords: algorithm, analysis, bisecting, centroid, cluster, clustering, comparison, corpora, corpus, document, email, feature, file, k-mean, kdbplus, learning, library, machine, machine learning, mbox, message, ml, nlp, parse, parsing, q, sentiment, similarity, string function, vector
 ---
-
 # <i class="fas fa-share-alt"></i> Natural-language processing 
+
 
 
 Natural-language processing (NLP) can be used to answer a variety of questions about unstructured text data, as well as facilitating open-ended exploration.
@@ -15,7 +17,7 @@ It can be applied to datasets such as emails, online articles and comments, twee
 
 The following requirements cover those needed to initialize running of the NLP library
 
--   [embedPy](../embedpy/)
+-   [embedPy](../embedpy/index.md)
 
 A number of Python dependencies also exist for this library. These can be installed as outlined at
 

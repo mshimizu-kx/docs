@@ -1,8 +1,10 @@
 ---
+title: embedPy user guide
+description: embedPy user guide
 keywords: embedpy, interface, kdb+, python
 ---
+# <i class="fab fa-python"></i> embedPy user guide
 
-# <i class="fab fa-python"></i> User Guide
 
 
 ## Running Python code

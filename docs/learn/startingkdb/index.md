@@ -1,7 +1,10 @@
 ---
+title: Starting kdb+ – a tutorial
+description: A quick-start guide to kdb+, aimed primarily at those learning independently. It covers system installation, the kdb+ environment, IPC, tables and typical databases, and where to find more material.
 hero: <i class="fas fa-graduation-cap"></i> Starting kdb+
+keywords: kdb+, q, start, tutorial, 
 ---
-# Introduction
+# Starting kdb+
 
 
 
@@ -41,7 +44,7 @@ The best resource for learning q. It includes:
 
 ### Other material
 
-Several background articles and links can be found in the [Archive](../archive). For example, the Thalesians’ [Knowledge Base Kdb](http://www.thalesians.com/finance/index.php/Knowledge_Base/Databases/Kdb) has a good overview.
+Several background articles and links can be found in the [Archive](../archive.md). For example, the Thalesians’ [Knowledge Base Kdb](http://www.thalesians.com/finance/index.php/Knowledge_Base/Databases/Kdb) has a good overview.
 
 
 ### Discussion groups
