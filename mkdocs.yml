@@ -404,11 +404,15 @@ nav:
         - Reference: interfaces/pyq/reference.md
         - What’s new: interfaces/pyq/whats-new.md
         - Version history: interfaces/pyq/history.md
-      - R:
-        - Overview: interfaces/R/index.md
-        - rkdb: interfaces/R/rkdb.md
-        - embedR: interfaces/R/embedR.md
-        - Complementary interfaces: interfaces/R/R-and-q.md
+      - R (embedR):
+        - Overview: interfaces/embedR/index.md
+        - User guide: interfaces/embedR/user-guide.md
+        - Examples: interfaces/embedR/examples.md
+      - R (rkdb):
+        - Overview: interfaces/rkdb/index.md
+        - User guide: interfaces/rkdb/user-guide.md
+        - Examples: interfaces/rkdb/examples.md
+      - R (complementary interfaces): interfaces/complementaryR/R-and-q.md
     - From: 
       - C: interfaces/c-client-for-q.md
       - C API reference: interfaces/capiref.md

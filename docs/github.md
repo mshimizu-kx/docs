@@ -115,7 +115,7 @@ about new repositories.</div>
 <tr>
 	<td class="nowrap">[rkdb](https://github.com/KxSystems/rkdb)</td>
 	<td>
-		[R client for q](interfaces/R/index.md)
+		[R client for q](interfaces/rkdb/index.md)
 		[<i class="fab fa-superpowers"></i>](interfaces/fusion.md "Fusion interfaces")
 	</td>
 </tr>

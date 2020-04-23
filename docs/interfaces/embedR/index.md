@@ -1,10 +1,10 @@
 ---
-title: Using R with kdb+ – Interfaces – kdb+ and q documentation
-description: How to enable R to connect to kdb+ and extract data; embed R inside q and invoke R routines; enable q to connect to a remote instance of R via TCP/IP and invoke R routines remotely; and enable q to load the R maths library and invoke R math routines locally.
-keywords: interface, kdb+, library, q, r
+title: embedR, an interface for calling R from q
+description: embedR is an interface that allows the R programming language to be invoked by q programs
+keywords: interface, kdb+, q, r
 hero: <i class="fab fa-superpowers"></i> Fusion for Kdb+
 ---
-# <i class="fab fa-r-project"></i> Using R with kdb+
+# <i class="fab fa-r-project"></i> embedR
 
 ## Introduction
 
@@ -40,18 +40,61 @@ Below are some best practice guidelines, although where the line is drawn betwee
     *   require more data than is feasible to ship to the R installation
 -   Use R for data visualization
 
-There are four ways to interface q with R:
+Considering the potential size of the data, it is probably more likely that the kdb+ installation containing the data will be hosted remotely from the user.
 
-1.  **R can connect to kdb+ and extract data (rkdb)** – loads a shared library into R, connects to kdb+ via TCP/IP
-2.  **Embed R inside q and invoke R routines (embedR)** – loads the R library into q, instantiates R
-3.  **q can connect to a remote instance of R** via TCP/IP and invoke R routines remotely
-4.  **q can load the R maths library** and invoke the R math routines locally
+### What Does embedR Provide?
 
-The first and second methods on interfacing between q and R are covered by the Fusion interfaces [rkdb](rkdb.md) and [embedR](embedR.md). The remaining methods are not supported or owned by Kx but are described [here](R-and-q.md). The packages and methods outlined here are ***kdb-Rmath***, ***RServe*** and ***RODBC***.
+What **embedR** provides is to embed R inside q and invoke R routines. can only be used if the q and R installations are installed on the same server.
 
-A number of considerations will affect which of the above interfaces are used. Considering the potential size of the data, it is probably more likely that the kdb+ installation containing the data will be hosted remotely from the user. Points to consider when selecting the integration method are:
+## Install
 
--   if interactive graphing is required, either interface (1) or (2) must be used
--   interface (2) can only be used if the q and R installations are installed on the same server
--   interfaces (2) and (4) require less data transfer between (possibly remote) processes
--   interfaces (2) and (3) both require variables to be copied from kdb+ to R for processing, meaning that at some point in time two copies of the variable will exist, increasing total memory requirements
+Work for both 32-bit and 64-bit kdb+. 
+
+Pre-built packages are available from [here](https://github.com/KxSystems/embedR/releases/tag/v1.2.1) for:
+
+-   <i class="fab fa-linux"></i> Linux
+-   <i class="fab fa-apple"></i> macOS
+
+If the appropriate build is not available on your target system, download from <i class="fab fa-github"></i> [KxSystems/embedR](https://github.com/KxSystems/embedR) and follow the installation instruction in `README.md`.
+
+The `R_HOME` environment variable must be set prior to starting q.
+To find out what that should be, run R from the Bash shell and see the result of `R.home()`
+
+```r
+> R.home()
+[1] "/Library/Frameworks/R.framework/Resources"
+```
+
+and then set it accordingly in your environment; e.g. for macOS with a Bash shell
+
+```bash
+$export R_HOME=/Library/Frameworks/R.framework/Resources
+```
+
+Optional additional environment variables are `R_SHARE_DIR`, `R_INCLUDE_DIR`, `LD_LIBRARY_PATH` (for libR.so).
+
+## Testing
+
+User can test embedR with the test script named `test.q` provided in `tests` folder of <i class="fab fa-github"></i> [KxSystems/embedR](https://github.com/KxSystems/embedR).
+
+Procedure is simple. Go to `tests` directory and run `test.q`.
+
+```bash
+$ cd embedR/tests
+$ q test.q
+0i
+
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+        Test Start!!
+        Score:  0/0
+        Fail:   0/0
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+...
+
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+        Completed!!
+        Score:  77/77
+        Fail:   0/77
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+```
