@@ -6,7 +6,7 @@ keywords: interface, kdb+, library, q, r
 ---
 # :fontawesome-brands-r-project: Using R and kdb+
 
-Outside the Fusion interfaces to R, a number of interfaces provide extremely useful functionality to a q instance from R and vice-versa.
+Outside the Fusion interfaces to R, meaning these are not supported or owned by Kx. But a number of interfaces provide extremely useful functionality to a q instance from R and vice-versa.
 
 ## Q in R
 

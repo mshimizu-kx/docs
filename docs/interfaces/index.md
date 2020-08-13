@@ -38,7 +38,9 @@ The [Fusion interfaces](fusion.md) to kdb+ are
 </i> [Using kdb+ within Python (PyQ)](pyq/index.md)<br/>
 [Using Python within kdb+ (embedPy)](../ml/embedpy/index.md) [:fontawesome-brands-superpowers:](../ml/ "Machine learning")
     </td></tr>
-<tr><td>R</td><td>[Using R with kdb+](r/index.md)</td>
+<tr><td>R</td><td>
+    </i>[Using R within kdb+ (embedR)](embedR/index.md)<br/>
+    [Using kdb+ from R (rkdb)](rkdb/index.md)</td></tr>
 <tr><td>Solace</td><td>[Interface to Solace PubSub+ broker](solace/index.md) ==new==</td></tr>
 </tr>
 </table>
@@ -205,7 +207,7 @@ The [Fusion interfaces](fusion.md) to kdb+ are
 <tr><td>ODBC</td><td>[Q client for ODBC](q-client-for-odbc.md)<br/>
 :fontawesome-brands-github: [johnanthonyludlow/kdb/docs/odbc.pdf](https://github.com/johnanthonyludlow/kdb/blob/master/docs/odbc.pdf)</td></tr>
 <tr><td>Philips Hue</td><td>:fontawesome-brands-github: [jparmstrong/qphue](https://github.com/jparmstrong/qphue)</td></tr>
-<tr><td>:fontawesome-brands-r-project: R</td><td>[Using R with kdb+](r/r-and-q.md)</td></tr>
+<tr><td>:fontawesome-brands-r-project: R</td><td>[Using R with kdb+](complementaryR/R-and-q.md)</td></tr>
 <tr><td>Reuters</td><td>:fontawesome-brands-github: [KxSystems/kdb/c/feed/rfa.zip](https://github.com/KxSystems/kdb/blob/master/c/feed/rfa.zip)</td></tr>
 <tr><td>TSE FLEX</td><td>:fontawesome-brands-github: [Naoki-Yatsu/TSE-FLEX-Converter](https://github.com/Naoki-Yatsu/TSE-FLEX-Converter)</td></tr>
 <tr>
