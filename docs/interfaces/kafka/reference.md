@@ -52,6 +52,12 @@ Kafka interface functionality
   [.kfk.AssignDel](#kfkassigndel)               Remove topic partition assignments from the current assignments
   [.kfk.Assignment](#kfkassignment)              Return the current assignment 
 
+  // Assignment functionality
+  .kfk.Assign                  Create a new assignment from which data will be consumed
+  .kfk.AssignAdd               Add new assignments to the current assignment
+  .kfk.AssignDel               Remove topic partition assignments from the current assignments
+  .kfk.Assignment              Return the current assignment 
+
   // system infomation
   [.kfk.Metadata](#kfkmetadata)                Broker Metadata
   [.kfk.Version](#kfkversion)                 Librdkafka version
@@ -67,6 +73,7 @@ Kafka interface functionality
   [.kfk.errcbreg](#kfkerrcbreg)                Register an error callback associated with a specific client
   [.kfk.throttlecbreg](#kfkthrottlecbreg)           Register a throttle callback associated with a specific client
 </pre>
+
 
 For simplicity in each of the examples below it should be assumed that the user’s system is configured correctly, unless otherwise specified. For example:
 
@@ -396,6 +403,7 @@ Where
 -   `data` is a string which incorporates the payload to be published
 -   `keys` is a string to be passed with the message to the partition denoting the message key
 
+
 returns a null on successful publication.
 
 ```q
@@ -632,6 +640,7 @@ Where
 -   `clid` is an integer denoting the client id which the assignment is to applied
 -   `tpc_part` is a dictionary mapping topic name as a symbol to partition as a long which is to be assigned
 
+
 returns a null on successful execution
 
 ```q
@@ -837,6 +846,7 @@ Where
 -   `topic` is the desired topic name to be assigned to the topic as a symbol
 -   `cfg` is a dictionary denoting a user-defined topic configuration, to use default set this to `()!()`
 
+
 returns an integer denoting the value given to the assigned topic.
 
 ```q
@@ -958,6 +968,7 @@ tered
     -   `bname`: string representing a broker name
     -   `bid`: integer denoting a broker ID
     -   `throttle_time`: integer denoting the accepted throttle time in milliseconds
+
 
 returns a null on successful execution and augments the dictionary `.kfk.errclient` mapping client id t
 o callback
