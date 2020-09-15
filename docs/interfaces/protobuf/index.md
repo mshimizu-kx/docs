@@ -24,7 +24,7 @@ This interface allows a user to serialize/deserialize Protobuf messages from a k
 - Load a schema file from a kdb+ session dynamically.
 	- This is an extremely flexible option giving the option to modify schema files without re-compiling the library. This option is approximately 10% to 20% less performant than the compiled version.
 
-In addition to this a user can also assign serialized data to a kdb+ variable or save it to a file. Similarly you can deserialize protobuf data from a kdb+ variable or a file.
+In addition to this a user can also assign serialized data to a kdb+ variable or save it to a file. Similarly you can deserialize Protobuf data from a kdb+ variable or a file.
 
 :fontawesome-regular-hand-point-right:
 [Function reference](reference.md), [example implementations](examples.md)

@@ -9,7 +9,7 @@ hero: <i class="fab fa-superpowers"></i> Fusion for Kdb+
 [KxSystems/protobufkdb](https://github.com/KxSystems/protobufkdb)
 <br>
 
-The following functions are those exposed in the `.protobufkdb` namespace allowing users to generate and parse protobuf messages.
+The following functions are those exposed in the `.protobufkdb` namespace allowing users to generate and parse Protobuf messages.
 
 <pre markdown="1" class="language-txt">
 .protobufkdb   **Protobuf/Protocol Buffers interface**
@@ -27,12 +27,12 @@ Inspect Schema
   [displayMessageSchema](#protobufkdbdisplaymessageschema)      Display the schema definistion of the message
 
 Serialize / Deserialize
-  [parseArray](#protobufkdbparsearray)            Deserialize encoded protobuf character array to a specified schema
-  [parseArrayArena](#protobufkdbparsearrayarena)       Deserialize encoded protobuf character array with the 
-                        specified schema creating an intermediate protobuf message on google arena
+  [parseArray](#protobufkdbparsearray)            Deserialize encoded Protobuf character array to a specified schema
+  [parseArrayArena](#protobufkdbparsearrayarena)       Deserialize encoded Protobuf character array with the 
+                        specified schema creating an intermediate Protobuf message on google arena
   [serializeArray](#protobufkdbserializearray)        Serialize kdb+ object with the specified schema
   [serializeArrayArena](#protobufkdbserializearrayarena)   Serialize kdb+ object with the specified schema 
-                        creating an intermediate protobuf message on google arena
+                        creating an intermediate Protobuf message on google arena
 
 Save / Load
   [loadMessage](#protobufkdbloadmessage)    Load the specified file and deserialize contents to a kdb+ object
@@ -161,16 +161,16 @@ message ScalarExampleDynamic {
 
 ### .protobufkdb.parseArray
 
-_Parse a proto-serialized char array into a protobuf message, then converts that into a corresponding kdb object._
+_Parse a proto-serialized char array into a Protobuf message, then converts that into a corresponding kdb object._
 
 Syntax: `.protobufkdb.parseArray[message_type;char_array]`
 
 Where:
 
 - `message_type` is a string/symbol denoting the message type.  Must be the same as the message name outlined in the .proto definition.
-- `char_array` is a kdb+ char array containing the serialized protobuf message.
+- `char_array` is a kdb+ char array containing the serialized Protobuf message.
 
-returns a kdb+ object corresponding to a supplied serialized protobuf message.
+returns a kdb+ object corresponding to a supplied serialized Protobuf message.
 
 ```q
 q)data:(1 2i;10 20f;`s1`s2)
@@ -185,16 +185,16 @@ s1 s2
 
 ### .protobufkdb.parseArrayArena
 
-_Identical to `.protobufkdb.parseArray[]` except the intermediate protobuf message is created on a google arena (can help improves memory allocation performance for large messages with deep repeated fields/map - see [here](https://developers.google.com/protocol-buffers/docs/reference/arenas))._
+_Identical to `.protobufkdb.parseArray[]` except the intermediate Protobuf message is created on a google arena (can help improves memory allocation performance for large messages with deep repeated fields/map - see [here](https://developers.google.com/protocol-buffers/docs/reference/arenas))._
 
 Syntax: `.protobufkdb.parseArrayArena[message_type;char_array]`
 
 Where:
 
 - `message_type` is a string/symbol denoting the message type.  Must be the same as the message name outlined in the .proto definition.
-- `char_array` is a kdb char+ array containing the serialized protobuf message.
+- `char_array` is a kdb char+ array containing the serialized Protobuf message.
 
-returns a kdb+ object corresponding to a supplied serialized protobuf message.
+returns a kdb+ object corresponding to a supplied serialized Protobuf message.
 
 ```q
 q)data:(1 2i;10 20f;`s1`s2)
@@ -209,7 +209,7 @@ s1 s2
 
 ### .protobufkdb.serializeArray
 
-_Convert a kdb+ object to a protobuf message and serialize this into a char array representation_
+_Convert a kdb+ object to a Protobuf message and serialize this into a char array representation_
 
 Syntax: `.protobufkdb.serializeArray[message_type; msg_in]`
 
@@ -218,7 +218,7 @@ Where:
 - `message_type` is a string/symbol denoting the message type.  Must be the same as the message name outlined in the .proto definition.
 - `msg_in` is the kdb+ object to be converted.
 
-returns kdb+ char array containing the serialized protobuf message contents
+returns kdb+ char array containing the serialized Protobuf message contents
 
 ```q
 q)data:(1 2i;10 20f;`s1`s2)
@@ -228,7 +228,7 @@ q).protobufkdb.serializeArray[`RepeatedExampleDynamic;data]
 
 ### .protobufkdb.serializeArrayArena
 
-_Identical to `.protobufkdb.serializeArray[]` except the intermediate protobuf message is created on a google arena (can help improves memory allocation performance for large messages with deep repeated/map fields - see [here](https://developers.google.com/protocol-buffers/docs/reference/arenas))._
+_Identical to `.protobufkdb.serializeArray[]` except the intermediate Protobuf message is created on a google arena (can help improves memory allocation performance for large messages with deep repeated/map fields - see [here](https://developers.google.com/protocol-buffers/docs/reference/arenas))._
 
 Syntax: `.protobufkdb.serializeArrayArena[message_type;msg_in]`
 
@@ -237,7 +237,7 @@ Where:
 - `message_type`  is a string/symbol denoting the message type.  Must be the same as the message name outlined in the .proto definition.
 - `msg_in` is the kdb+ object to be converted.
 
-returns kdb+ char array containing the serialized protobuf message contents
+returns kdb+ char array containing the serialized Protobuf message contents
 
 ```q
 q)data:(1 2i;10 20f;`s1`s2)
@@ -249,7 +249,7 @@ q).protobufkdb.serializeArrayArena[`RepeatedExampleDynamic;data]
 
 ### .protobufkdb.loadMessage
 
-_Parse a proto-serialized stream from a specified file to a protobuf message and convert this into a corresponding kdb+ object._
+_Parse a proto-serialized stream from a specified file to a Protobuf message and convert this into a corresponding kdb+ object._
 
 Syntax: `.protobufkdb.loadMessage[message_type;file_name]`
 
@@ -274,7 +274,7 @@ s1 s2
 
 ### .protobufkdb.saveMessage
 
-_Convert a kdb object to a protobuf message, serializes it, then write the result to the specified file._
+_Convert a kdb object to a Protobuf message, serializes it, then write the result to the specified file._
 
 Syntax: `.protobufkdb.saveMessage[message_type;file_name;msg_in]`
 

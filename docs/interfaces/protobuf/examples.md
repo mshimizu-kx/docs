@@ -8,7 +8,7 @@ hero: <i class="fab fa-superpowers"></i> Fusion for Kdb+
 :fontawesome-brands-github:
 [KxSystems/protobufkdb](https://github.com/KxSystems/protobufkdb)
 
-In the example below we assume that the file structure of the current working directory looks like this:
+It is assumed in the below example that a user is executing logic the root of the protobufkdb repository. The file structure for the required components from this location is as follows:
  
 ```bash
 .
@@ -20,7 +20,7 @@ In the example below we assume that the file structure of the current working di
     └── protobufkdb.q
 ```
 
-Here `sample.proto` is defined like this:
+Here `sample.proto` is defined as follows:
 
 ```bash
 syntax = "proto3";
@@ -44,15 +44,18 @@ message Region {
 
 ## Load Protobufkdb Library
 
+From the root of the repository load the protobufkdb library
+
 ```q
 q)\l q/protobufkdb.q
 ```
 
 ## Import Schema File
 
-_This procedure is not necessary when you are using a library built from source linking schema files. In using dynamic import functionality you need to specify the path of your proto (schema) files first._
+When using dynamic import functionality you need to specify the path of your proto (schema) files first. As such we tell protobufkdb the location of schema files of interest specifying its path (`"./proto"`) and importing the relevant file (`"sample.proto"`).
 
-Tell protobufkdb the location of schema files specifying its path (`./proto`) and then import a specific file (`sample.proto`).
+!!!Note
+	This step is not necessary when using a library built from source, where schema files are linked appropriately.
 
 ```q
 q).protobufkdb.addProtoImportPath["proto"]
@@ -60,6 +63,8 @@ q).protobufkdb.importProtoFile["sample.proto"]
 ```
 
 ## Checking Schema File
+
+Ensure the schema file has been imported appropriately and display the schemas therein.
 
 ```q
 q).protobufkdb.displayMessageSchema[`Office]
@@ -80,14 +85,17 @@ message Region {
 
 ## Serialize Data
 
-Protobuf message is expressed in a mixed list in q. You can serialize the data with a target schema name.
+A Protobuf message is expressed in a mixed list in q. This data can be serialized to Protobuf provided the message content matches the format of a named target schema.
 
 ```q
-q)HQ:((`$"Head_Office"; `$"Brian_Conlon_House"); 54.179127; -6.337371; 2020.03.23)
+// Serialize the details of an office to a Protobuf array
+q)HQ:(`Head_Office`Brian_Conlon_House; 54.179127; -6.337371; 2020.03.23)
 q)encodedHQ:.protobufkdb.serializeArray[`Office; HQ]
 q)encodedHQ
 "\n\013Head_Office\n\022Brian_Conlon_House\021Qj/\242\355\026K@\031\253y\216\..
-q)newry:((`$"Newry_Office"; `$"The_Conlon_Building"); 54.1751772; -6.3378739; 2020.08.14)
+
+// Serialize the details of all offices in a region to a Protobuf array using Arenas
+q)newry:(`Newry_Office`The_Conlon_Building; 54.1751772; -6.3378739; 2020.08.14)
 q)belfast:(enlist `Belfast; 54.592595; -5.927475; 2020.08.14)
 q)EMEA:`HQ`Newry`Belfast!(HQ; newry; belfast)
 q)encodedEMEA:.protobufkdb.serializeArrayArena[`Region; (`EMEA; EMEA)]
@@ -97,12 +105,17 @@ q)encodedEMEA
 
 ## Deserialize Data
 
+Retrieve the contents of a Protobuf message serialized in the above example
+
 ```q
+// Retrieve encoded information about an office from a Protobuf message
 q).protobufkdb.parseArray[`Office; encodedHQ]
 `Head_Office`Brian_Conlon_House
 54.17913
 -6.337371
 2020.03.23
+
+// Retrieve encoded information about a region from a Protobuf message using Arenas
 q).protobufkdb.parseArrayArena[`Region; encodedEMEA]
 `EMEA
 `HQ`Newry`Belfast!((`Head_Office`Brian_Conlon_House;54.17913;-6.337371;2020.0..
@@ -118,6 +131,8 @@ q).protobufkdb.saveMessage[`Office; "proto/record_HQ"; HQ]
 
 ## Load Serialized Data
 
+Retrieve data serialized and saved to a file based on a specified schema
+
 ```q
 q).protobufkdb.loadMessage[`Office; "proto/record_HQ"]
 `Head_Office`Brian_Conlon_House
@@ -126,4 +141,4 @@ q).protobufkdb.loadMessage[`Office; "proto/record_HQ"]
 2020.03.23
 ```
 
-You can find more examples in :fontawesome-brands-github: [Protobufkdb repository](https://github.com/KxSystems/protobufkdb).
+You can find more examples in :fontawesome-brands-github: [protobufkdb/examples](https://github.com/KxSystems/protobufkdb/tree/master/examples).
