@@ -4,7 +4,13 @@ author: James Galligan
 date: April 2020
 description: Using kdb+ to produce trade analytics – indicators and oscillators traders commonly use to trigger buy/sell signals and clarify their picture of the market.
 ---
+White paper
+{: #wp-brand}
+
 # Implementing trend indicators in kdb+
+
+by [James Galligan](#author)
+{: .wp-author}
 
 ![Kraken Candle](krakencandlestick.png)
 
@@ -16,7 +22,7 @@ In this paper, we show examples of functions commonly used in finance, built on 
 
 Cryptocurrency data for Bitcoin and Ethereum from multiple exchanges are used in the examples. 
 
-Charts are displayed using the :fontawesome-solid-laptop-code: [Kx Analyst](https://kx.com/solutions/the-enterprise/analyst/) IDE.
+Charts are displayed using the :fontawesome-solid-laptop-code: [KX Analyst](https://kx.com/solutions/the-enterprise/analyst/) IDE.
 
 The code used in this paper can be found at
 :fontawesome-brands-github:
@@ -136,7 +142,7 @@ date       sym     exch   high   low    open   close  vol      sma2    sma5
 2019.05.18 BTC_USD KRAKEN 7494.2 7205   7353.9 7266.8 6258.585 7308.4  7738.84
 ```
 
-The graph in Figure 2 was created using Kx Analyst. A sample for this code can be seen below. All Graphics of Grammar code can be found in the repository for this project. The following is an example.
+The graph in Figure 2 was created using KX Analyst. A sample for this code can be seen below. All Graphics of Grammar code can be found in the repository for this project. The following is an example.
 
 ```q
 sma:{[x]
@@ -575,11 +581,18 @@ The functions shown range from moving averages to more complex functions like Re
 This touches the tip of the iceberg of what can be done in analytics and emphasizes the power of kdb+ in a data-analytics solution. Libraries of custom-built analytic functions can be created with ease, and in a short space of time applied to realtime and historical data.
 
 :fontawesome-solid-laptop-code:
-This paper also demonstrates [Kx Analyst](https://kx.com/solutions/the-enterprise/analyst/), an IDE for creating analytical functions and visualizing their output.
+This paper also demonstrates [KX Analyst](https://kx.com/solutions/the-enterprise/analyst/), an IDE for creating analytical functions and visualizing their output.
 
-The combination of this library of functions and Kx Analyst provides the user faster development and processing times to gain meaningful insights from the data.
+The combination of this library of functions and KX Analyst provides the user faster development and processing times to gain meaningful insights from the data.
 
 
-## :fontawesome-solid-user: Author
+## Author
 
-James Galligan is a kdb+ consultant who has designed and implemented data-capture and data-analytics platforms across a number of different asset classes. He has worked at tier-one investment banks across the world, including the US and Asia. Based in Singapore, James is currently working on the design, development and maintenance of a range of kdb+ solutions for trading and analytics across multiple asset classes in a leading financial institution.
+![James Galligan](../../img/faces/jamesgalligan.jpg)
+{: .small-face}
+
+**James Galligan** is a kdb+ consultant who has designed and developed data-capture and data-analytics platforms for trading and analytics across multiple asset classes in multiple leading financial institutions. 
+&nbsp;
+[:fontawesome-solid-envelope:](mailto:jgalligan@kx.com?subject=White paper: Implementing trend indicators in kdb+) &nbsp;
+[:fontawesome-brands-linkedin:](https://www.linkedin.com/in/james-galligan-50629997/) &nbsp;
+[:fontawesome-brands-github:](https://github.com/jgalligan1993/)

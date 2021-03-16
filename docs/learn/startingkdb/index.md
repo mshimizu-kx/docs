@@ -1,7 +1,6 @@
 ---
 title: Starting kdb+ – a tutorial – Learn – kdb+ and q documentation
 description: A quick-start guide to kdb+, aimed primarily at those learning independently. It covers system installation, the kdb+ environment, IPC, tables and typical databases, and where to find more material.
-hero: <i class="fas fa-graduation-cap"></i> Starting kdb+
 keywords: kdb+, q, start, tutorial, 
 ---
 # Starting kdb+
@@ -10,9 +9,9 @@ keywords: kdb+, q, start, tutorial,
 
 
 
-This is a quick-start guide to kdb+, aimed primarily at those learning independently. It covers system installation, the kdb+ environment, IPC, tables and typical databases, and where to find more material. After completing this you should be able to follow the Borror textbook [Q for Mortals](/q4m3/), and the [Reference](../../ref/index.md) and consult the [Knowledge Base](../../kb/index.md).
+This is a quick-start guide to kdb+, aimed primarily at those learning independently. It covers system installation, the kdb+ environment, IPC, tables and typical databases, and where to find more material. After completing this you should be able to follow the Borror textbook [Q for Mortals](/q4m3/), and the [Reference](../../ref/index.md).
 
-One caution: you can learn kdb+ reasonably well by independent study, but for serious deployment of the product you need the help of a consultant. This is because kdb+ is typically used for very demanding applications that require experience to set up properly. Contact Kx for help with such evaluations.
+One caution: you can learn kdb+ reasonably well by independent study, but for serious deployment of the product you need the help of a consultant. This is because kdb+ is typically used for very demanding applications that require experience to set up properly. Contact KX for help with such evaluations.
 
 
 ## Kdb+
@@ -30,7 +29,6 @@ The kdb+ system is both a database and a programming language.
 The best resource for learning q. It includes:
 
 -   Jeff Borror’s textbook [Q for Mortals](/q4m3/)
--   a [Knowledge Base](../../kb/index.md) of common tasks
 -   a [Reference](../../ref/index.md) for the built-in functions
 -   [interfaces](../../interfaces/index.md) with other languages and processes
 
@@ -89,5 +87,5 @@ Two sets of scripts are referenced in this guide:
 
 When q is run, it displays a console where you can enter commands and see the results. This is all you need to follow the tutorial, and if you just want to learn a little about q, then it is easiest to work in the console.
 
-As you become more familiar with q, you may prefer to work in the interactive development environment [**Kx Developer**](/developer/). ([_Kx Analyst_](/analyst/) is the enterprise version of Developer.)
+As you become more familiar with q, you may prefer to work in the interactive development environment [**KX Developer**](/developer/). ([_Kx Analyst_](/analyst/) is the enterprise version of Developer.)
 

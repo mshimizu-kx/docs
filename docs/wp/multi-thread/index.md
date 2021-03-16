@@ -1,11 +1,16 @@
 ---
-title: Multi-threading in kdb+ – White Papers – kdb+ and q documentation
+title: Multi-threading in kdb+ | White Papers | kdb+ and q documentation
 description: How to use parallel processing in kdb+ processes, and what the limitations are
 author: Edward Cormack
-date: 
 keywords: kdb+, multi-core, multi-threading, parallel, parallelize, performance, q, vector
 ---
+White paper
+{: #wp-brand}
+
 # Multi-threading in kdb+<br>Performance optimizations and use cases
+
+by [Edward Cormack](#author)
+{: .wp-author}
 
 
 
@@ -480,12 +485,14 @@ Used incorrectly, parallel processing can be less efficient than the equivalent 
 
 The use of multi-threading in kdb+ should therefore be treated on a case-by-case basis. It is a feature which should often be considered by developers, but performance testing is recommended before implementation.
 
-System-management solutions are available to assist with administering multi-process environments, like [Kx Control](../../devtools.md#kx-control) which provides a range of tools for visualizing process workflow, task scheduling and system-resource monitoring. These features are especially helpful at managing primary/replica configurations, where client queries or the loading of data is divided between processes in order to increase throughput.
+System-management solutions are available to assist with administering multi-process environments, like [KX Control](../../devtools.md#kx-control) which provides a range of tools for visualizing process workflow, task scheduling and system-resource monitoring. These features are especially helpful at managing primary/replica configurations, where client queries or the loading of data is divided between processes in order to increase throughput.
 
 All tests performed using kdb+ version 3.1 (2013.06.25)
+
+[:fontawesome-solid-print: PDF](/download/wp/multi_threading_in_kdb_performance_optimisations_and_use_cases.pdf)
 
 
 ## Author
 
-Edward Cormack is a financial engineer who has worked on developing financial data solutions for a range of clients. Edward is currently based at a top-tier investment bank in London, developing a kdb+ platform for global equity risk.
+**Edward Cormack** is a financial engineer who has worked on developing financial data solutions for a range of clients. Edward is currently based at a top-tier investment bank in London, developing a kdb+ platform for global equity risk.
 

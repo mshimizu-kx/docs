@@ -2,7 +2,6 @@
 title: Using HDF5 with kdb+ | Interfaces | Documentation for kdb+ and q
 description: Interface to allow the reading and writing of HDF5 data to and from kdb+  
 date: March 2020
-hero: <i class="fab fa-superpowers"></i> Fusion for Kdb+
 keywords: HDF5, api, fusion, interface, conversion, data formatting
 ---
 # ![HDF5](../img/hdf5.jpeg) Using HDF5 data with kdb+
@@ -62,10 +61,9 @@ with [example implementations](examples.md)
 :fontawesome-brands-github:
 [Install guide](https://github.com/KxSystems/hdf5#installation)
 
-
 ## Status
 
-This interface is currently available as a beta version under an Apache 2.0 licence and is supported on a best-efforts basis by the Fusion team. This interface is currently in active development, with additional functionality to be released on a rolling basis.
+This interface is currently available under an Apache 2.0 licence and is supported on a best-efforts basis by the Fusion team. This interface is currently in active development, with additional functionality to be released on a rolling basis.
 
 If you find issues with the interface or have feature requests please 
 :fontawesome-brands-github:

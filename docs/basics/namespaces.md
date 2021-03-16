@@ -33,18 +33,18 @@ namespace       | contents
 The linked pages document some of the objects in these namespaces. 
 (Undocumented objects are part of the namespace infrastructure and should not be used in kdb+ applications.) 
 
-!!! warning "These and all single-character namespaces are reserved for use by Kx."
+!!! warning "These and all single-character namespaces are reserved for use by KX."
 
 
 ## Names
 
-Apart from the leadi g dot, nmespace names follow the same rules as names for q objects.
+Apart from the leading dot, namespace names follow the same rules as names for q objects.
 
 Outside its containing namespace, an object is known by the full name of its containing namespace followed by a dot and its own name. 
 
 Namespaces can contain other namespaces.
 
-Thus `.fee.fi.fo`  is the name of object `fo` within namespace `fi` within namespace `foo`. 
+Thus `.fee.fi.fo`  is the name of object `fo` within namespace `fi` within namespace `fee`. 
 
 
 ## Dictionaries
@@ -85,4 +85,4 @@ q)key `.fee.fi
 <br>
 :fontawesome-solid-street-view:
 _Q for Mortals_
-[§12 Workspace Organization](/q4m3/12_Workspace_organization/)
+[§12 Workspace Organization](/q4m3/12_Workspace_Organization/)

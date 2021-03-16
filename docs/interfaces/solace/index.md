@@ -1,7 +1,6 @@
 ---
 title: Solace | Interfaces | Documentation for kdb+ and q
 description: Interface between kdb+ and Solace 
-hero: <i class="fab fa-superpowers"></i> Fusion for Kdb+
 keywords: Solace, publish, subscribe, request, reply, streaming, qos, q
 ---
 # ![Solace](../img/solace.jpeg) Solace interface to kdb+
@@ -37,14 +36,12 @@ This interface lets you communicate with a Solace PubSub+ event broker from a kd
 :fontawesome-brands-github:
 [Install guide](https://github.com/KxSystems/solace#installation)
 
-
 ## Status
 
-The interface is currently available as a beta version under an Apache 2.0 licence and is supported on a best effort basis by the Fusion team. This interface is currently in active development, with additional functionality to be released on an ongoing basis.
+The interface is currently available under an Apache 2.0 licence and is supported on a best effort basis by the Fusion team. This interface is currently in active development, with additional functionality to be released on an ongoing basis.
 
 :fontawesome-brands-github: 
 [Issues and feature requests](https://github.com/KxSystems/solace/issues) 
 <br>
 :fontawesome-brands-github: 
 [Guide to contributing](https://github.com/KxSystems/solace/blob/master/CONTRIBUTING.md)
-

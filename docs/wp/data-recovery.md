@@ -1,15 +1,22 @@
 ---
-title: Data recovery for kdb+tick – White Papers – kdb+ and q documentation
+title: Data recovery for kdb+tick | White Papers | kdb+ and q documentation
 description: Tickerplant logfiles can be replayed to recover service, even after they have been corrupted. 
 author: Fionnbharr Gaston
 date: July 2014
 keywords: corrupt, data, data recovery, error, kdb+, log, logfile, q, real-time, recovery, replay, subscribe, tick, tickerplant, trap
 ---
+White paper
+{: #wp-brand}
+
 # Data recovery for kdb+tick
 
+by [Fionnbharr Gaston](#author)
+{: .wp-author}
 
 
-Kx freely offers a complete tick-capture product which allows for the processing, analysis and historical storage of huge volumes of tick data in real time. This product, known as kdb+tick, is extremely powerful, lightweight and forms the core of most kdb+ architectures. 
+
+
+KX freely offers a complete tick-capture product which allows for the processing, analysis and historical storage of huge volumes of tick data in real time. This product, known as kdb+tick, is extremely powerful, lightweight and forms the core of most kdb+ architectures. 
 
 The tickerplant lies at the heart of this structure. It is responsible for receiving data from external feedhandlers and publishing to downstream subscribers. 
 
@@ -527,8 +534,10 @@ The log file can, however, become corrupted. For instance, the tickerplant proce
 
 All tests were run using kdb+ V3.1 (2014.03.27).
 
+[:fontawesome-solid-print: PDF](/download/wp/data_recovery_for_kdb_tick.pdf)
+
 
 ## Author
 
-Fionnbharr Gaston is a kdb+ consultant currently based in Singapore. He has worked with a number of top-tier investment banks and exchanges in the UK, Asia, and Australia, on applications ranging from market-data capture to market surveillances.
+**Fionnbharr Gaston** is a kdb+ consultant currently based in Singapore. He has worked with a number of top-tier investment banks and exchanges in the UK, Asia, and Australia, on applications ranging from market-data capture to market surveillances.
 

@@ -20,12 +20,25 @@ For the Exec operator `?`, see
 
 ## Syntax
 
-<pre markdown="1" class="language-txt">
-exec _p<sub>s</sub>_ [by _p<sub>b</sub>_] from _t<sub>exp</sub>_ [where _p<sub>w</sub>_]
-</pre>
+Below, square brackets mark optional elements.
+
+<div markdown="1" class="typewriter">
+exec [distinct] _p<sub>s</sub>_ [by _p<sub>b</sub>_] from _t<sub>exp</sub>_ [where _p<sub>w</sub>_]
+</div>
 
 :fontawesome-solid-book-open:
 [qSQL syntax](../basics/qsql.md)
+
+
+## From phrase
+
+The [table expression](../basics/qsql.md#from-phrase) _t<sub>exp</sub>_ may be a table in memory, or on disk, where it may be splayed but not partitioned. 
+
+The workaround is to use the result of a `select` query as the table expression:
+
+```txt
+exec … from select … from …
+```
 
 
 ## Select phrase
@@ -129,6 +142,17 @@ eye | `blue`green`gray
 ```
 
 
+## Limit expression
+
+`exec distinct` returns only unique items in the first item of the result.
+
+```q
+q)exec distinct s,p,s from sp
+s | `s$`s1`s4`s2`s3
+p | `p$`p1`p2`p3`p4`p5`p6`p1`p2`p2`p2`p4`p5
+s1| `s$`s1`s1`s1`s1`s4`s1`s2`s2`s3`s4`s4`s1
+```
+
 
 ## Cond
 
@@ -138,6 +162,7 @@ see [qSQL](../basics/qsql.md#cond).
 
 
 ----
+
 :fontawesome-solid-book:
 [`delete`](delete.md),
 [`select`](select.md),

@@ -7,12 +7,12 @@ keywords: exec, delete, kdb+, q, query, select, sql, update, upsert
 
 
 
-<pre markdown="1" class="language-txt">
+<div markdown="1" class="typewriter">
 [delete](../ref/delete.md)  delete rows or columns from a table
 [exec](../ref/exec.md)    return columns from a table, possibly with new columns
 [select](../ref/select.md)  return part of a table, possibly with new columns
 [update](../ref/update.md)  add rows or columns to a table
-</pre>
+</div>
 
 The query templates of qSQL share a query syntax that varies from the [syntax of q](syntax.md) and closely resembles [conventional SQL](https://www.w3schools.com/sql/).
 For many use cases involving ordered data it is significantly more expressive.
@@ -21,33 +21,27 @@ For many use cases involving ordered data it is significantly more expressive.
 [Structured Query Language](https://en.wikipedia.org/wiki/SQL "Wikipedia")
 
 
-## Functional SQL
-
-The interpreter translates the query templates into [functional SQL](funsql.md) for evaluation. The functional forms are more general, and some complex queries require their use. 
-But the query templates are powerful, readable, and there is no performance penalty for using them. 
-
-Wherever possible, prefer the query templates to functional forms.
-
-
 ## Template syntax
 
-<pre markdown="1" class="language-txt">
-select [_L<sub>exp</sub>_] [[distinct|_p<sub>s</sub>_]] [by _p<sub>b</sub>_] from _t<sub>exp</sub>_ [where _p<sub>w</sub>_]
-exec                    [_p<sub>s</sub>_]  [by _p<sub>b</sub>_] from _t<sub>exp</sub>_ [where _p<sub>w</sub>_]
-update                   _p<sub>s</sub>_   [by _p<sub>b</sub>_] from _t<sub>exp</sub>_ [where _p<sub>w</sub>_]
-delete                                from _t<sub>exp</sub>_ [where _p<sub>w</sub>_]
-delete                   _p<sub>s</sub>_           from _t<sub>exp</sub>_
-</pre>
+Below, square brackets mark optional elements; a slash begins a trailing comment.
+
+<div markdown="1" class="typewriter">
+select [_L<sub>exp</sub>_]     [_p<sub>s</sub>_] [by _p<sub>b</sub>_] from _t<sub>exp</sub>_ [where _p<sub>w</sub>_]
+exec   [distinct] [_p<sub>s</sub>_] [by _p<sub>b</sub>_] from _t<sub>exp</sub>_ [where _p<sub>w</sub>_]
+update             _p<sub>s</sub>_  [by _p<sub>b</sub>_] from _t<sub>exp</sub>_ [where _p<sub>w</sub>_]
+delete                         from _t<sub>exp</sub>_ [where _p<sub>w</sub>_]        / rows
+delete             _p<sub>s</sub>_          from _t<sub>exp</sub>_                   / columns
+</div>
 
 A template is evaluated in the following order.
 
-<pre markdown="1" class="language-txt">
-Table expression   _t<sub>exp</sub>_
+<div markdown="1" class="typewriter">
+[From phrase](#from-phrase)        _t<sub>exp</sub>_
 [Where phrase](#where-phrase)       _p<sub>w</sub>_
 [By phrase](#by-phrase)          _p<sub>b</sub>_
 [Select phrase](../ref/select.md#select-phrase)      _p<sub>s</sub>_
 [Limit expression](../ref/select.md#limit-expression)   _L<sub>exp</sub>_
-</pre>
+</div>
 
 
 ### From phrase
@@ -60,19 +54,34 @@ The table expression _t<sub>exp</sub>_ is
 
 -   a table or dictionary (call-by-value)
 -   the name of a table or dictionary, in memory or on disk, as a symbol atom (call-by-name)
--   an expression which evaluates to either of the above
+
+Examples:
+
+```txt
+update c:b*2 from ([]a:1 2;b:3 4)   / call by value
+select a,b from t                   / call by value
+select a,b from `t                  / call by name
+update c:b*2 from `:path/to/db      / call by name
+```
+
+
+### Limit expressions
+
+Limit expressions restrict the results returned by `select` or `exec`. 
+(For `exec` there is only one: `distinct`).
+They are described in the articles for [`select`](../ref/select.md) and [`exec`](../ref/exec.md).
 
 
 ### Result and side effects
 
 In a `select` query, the result is a table or dictionary. 
 
-In an `exec` query the result is a list or dictionary.
+In an `exec` query the result is a list of column values, or dictionary.
 
 In an `update` or `delete` query, where the table expression is a call
 
-- by value, the query returns the modified table or dictionary 
-- by name, the table or dictionary is amended in place (in memory or on disk) as a side effect, and its name returned as the result
+-   by value, the query returns the modified table or a dictionary 
+-   by name, the table or dictionary is amended in place (in memory or on disk) as a side effect, and its name returned as the result
 
 ```q
 q)t1:t2:([]a:1 2;b:3 4)
@@ -82,12 +91,12 @@ a  b
 ----
 -1 3
 -2 4
-q)t1~t2
+q)t1~t2   / t1 unchanged
 1b
 
 q)update a:neg a from `t1
 `t1
-q)t1~t2
+q)t1~t2   / t1 changed
 0b
 ```
 
@@ -243,6 +252,10 @@ c  c   60 33.3 "3.3"
 
 A virtual column `i` represents the index of each record, i.e., the row number. 
 
+??? detail "Partitioned tables"
+
+    In a partitioned table `i` is the index (row number) relative to the partition, not the whole table.
+
 Because it is implicit in every table, it never appears as a column or key name in the result. 
 
 ```q
@@ -273,7 +286,7 @@ a  10 1.1
 c  30 3.3
 ```
 
-Subphrases in the Where phrase are implicitly joined with AND. 
+Subphrases specify _successive_ filters.
 
 ```q
 q)select from t where c2>15,c3<3.0
@@ -281,7 +294,7 @@ c1 c2 c3
 ---------
 b  20 2.2
 
-q)select from t where (c2>15)|c3<3.0
+q)select from t where (c2>15) and c3<3.0
 c1 c2 c3
 ---------
 a  10 1.1
@@ -289,11 +302,46 @@ b  20 2.2
 c  30 3.3
 ```
 
-In the second example above, the expressions `c2>15` and `c3<3.0` are evaluated for the entire table. Not so in the first.
+The examples above return the same result but have different performance characteristics.
 
-In `where c2>15,c3<3.0` the leftmost subphrase `c2>15` is evaluated first. When the next subphrase is evaluated, only items at indexes which passed the first test are tested. And so on.
+In the second example, all `c2` values are compared to 15, and all `c3` values are compared to 3.0. The two result vectors are ANDed together. 
+
+In the first example, only `c3` values corresponding to `c2` values greater than 15 are tested. 
+
+Efficient Where phrases start with their most stringent tests.
+
+??? danger "Querying a partitioned table"
+
+    When querying a partitioned table, the first Where subphrase should select from the value/s used to partition the table. 
+
+    Otherwise, kdb+ will (attempt to) load into memory all partitions for the column/s in the first subphrase.
 
 !!! tip "Use [`fby`](../ref/fby.md) to filter on groups."
+
+
+## Aggregates
+
+In SQL:
+
+```sql
+SELECT stock, SUM(amount) AS total FROM trade GROUP BY stock
+```
+
+In q:
+
+```q
+q)select total:sum amt by stock from trade
+stock| total
+-----| -----
+bac  | 1000
+ibm  | 2000
+usb  | 815
+```
+
+The column `stock` is a key in the result table.
+
+:fontawesome-solid-book-open:
+[Mathematics](../basics/math.md) for more aggregate functions
 
 
 ## Sorting
@@ -347,6 +395,9 @@ s4 p5 100
     ``…where `g=,`s  within …``  
     Maybe rare to get much speedup, but if the `` `g `` goes to 100,000 and then `` `s `` is 1 hour of 24 you might see some overall improvement (with overall table of 30 million). 
 
+  :fontawesome-solid-street-view:
+  _Q for Mortals_
+  [§14.3.6 Query Execution on Partitioned Tables](/q4m3/14_Introduction_to_Kdb%2B/#1436-query-execution-on-partitioned-tables)
 
 ## Multithreading
 
@@ -420,22 +471,53 @@ a       b
 or use the [Vector Conditional](../ref/vector-conditional.md) instead.
 
 
+## Functional SQL
+
+The interpreter translates the query templates into [functional SQL](funsql.md) for evaluation. The functional forms are more general, and some complex queries require their use. 
+But the query templates are powerful, readable, and there is no performance penalty for using them. 
+
+!!! tip "Wherever possible, prefer the query templates to functional forms."
+
+
 ## Stored procedures
 
-:fontawesome-solid-street-view:
-_Q for Mortals_
-[§9.9.10 Parameterized Queries](/q4m3/9_Queries_q-sql/#999-parameterized-queries)
+Any suitable lambda can be used in a query.
+
+```q
+q)f:{[x] x+42}
+q)select stock, f amount from trade
+stock amount
+------------
+ibm   542
+...
+```
 
 
-## Views
+## Parameterized queries
 
-:fontawesome-solid-graduation-cap:
-[Views](../learn/views.md)
-<br>
-:fontawesome-solid-street-view:
-_Q for Mortals_
-[§9.9.11 Views](/q4m3/9_Queries_q-sql/#9911-views)
+Query template expressions can be evaluated in lambdas.
 
+```q
+q)myquery:{[tbl; amt] select stock, time from tbl where amount > amt}
+q)myquery[trade; 100]
+stock time
+------------------
+ibm   09:04:59.000
+...
+```
+
+Column names cannot be parameters of a qSQL query. Use [functional qSQL](../basics/funsql.md) in such cases.
+
+
+## Queries using SQL syntax
+
+Q implements a translation layer from SQL. The syntax is to prepend `s)` to the SQL query.
+
+```q
+q)s)select * from trade
+```
+
+!!! warning "Only a subset of SQL is supported."
 
 
 ----
@@ -447,6 +529,13 @@ _Q for Mortals_
 :fontawesome-solid-book-open:
 [Functional SQL](funsql.md)
 <br>
+:fontawesome-solid-graduation-cap:
+[Views](../learn/views.md)
+<br>
 :fontawesome-solid-street-view:
 _Q for Mortals_
 [§9.0 Queries: q-sql](/q4m3/9_Queries_q-sql/#90-overview)
+<br>
+:fontawesome-solid-street-view:
+_Q for Mortals_
+[§9.9.10 Parameterized Queries](/q4m3/9_Queries_q-sql/#999-parameterized-queries)

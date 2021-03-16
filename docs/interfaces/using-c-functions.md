@@ -46,7 +46,8 @@ In this article we explain how to write functions in C that can be used in this 
 ## Compiling extension modules
 
 ### Windows
-```powershell
+
+```shell
 cl /LD bar.c bar.def q.lib
 ```
 
@@ -289,7 +290,7 @@ q)cpu_frequency[]
 
 ### Reading CPU frequency on macOS
 
-MacOS does not have `/proc` interface. One can create one in user space using [MacFUSE](http://osxbook.com/book/bonus/chapter11/procfs/), but it is easier to use `sysctl`:
+MacOS does not have `/proc` interface. One can create one in user space using [MacFUSE](https://osxfuse.github.io/), but it is easier to use `sysctl`:
 
 ```c
 #include <sys/types.h>

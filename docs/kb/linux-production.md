@@ -9,7 +9,7 @@ keywords: kdb+, linux, production, q
 
 !!! important "Linux kernels"
 
-    Kx recommendations for NUMA hardware, Transparent Huge Pages and Huge Pages are different for different Linux kernels. 
+    KX recommendations for NUMA hardware, Transparent Huge Pages and Huge Pages are different for different Linux kernels. 
     Details below. Look for the :fontawesome-solid-code: icon. 
 
 
@@ -70,7 +70,6 @@ $ numactl -s
 
 A number of customers have been impacted by bugs in the Linux kernel with respect to Transparent Huge Pages. These issues manifest themselves as process crashes, stalls at 100% CPU usage, and sporadic performance degradation. 
 
-<i class="fas fa-code fa-2x"></i>
 Our recommendation for THP is similar to the recommendation for memory interleaving. 
 
 Linux kernel   | THP

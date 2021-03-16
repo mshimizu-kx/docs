@@ -6,10 +6,10 @@ author: Stephen Taylor
 # `hopen`, `hclose`
 
 
-<pre markdown="1" class="language-txt">
+<div markdown="1" class="typewriter">
 [`hopen`](#hopen)   connect a process or file
 [`hclose`](#hclose)  disconnect a process or file
-</pre>
+</div>
 
 
 Kdb+ communicates with the [file system](../basics/files.md) and other processes through
@@ -21,6 +21,8 @@ Connections are opened and closed respectively by `hopen` and `hclose`.
 
 
 ## :fontawesome-solid-handshake: `hopen`
+
+_Open a connection to a file or process_
 
 ```txt
 hopen filehandle
@@ -58,6 +60,8 @@ hopen each(`:mysymbol;
 
 
 ## :fontawesome-solid-handshake-slash: `hclose`
+
+_Close a connection to a file or process_
 
 ```txt
 hclose x     hclose[x]
@@ -171,7 +175,14 @@ q)`:mydb.us.com:5010:elmo:sesame "1+1"
 
 It is more efficient to keep a connection open if there is an opportunity to re-use it for other queries.
 
+One-shot sync queries can now execute via `` `::[(":host:port";timeout);query]``.
+(Since V4.0 2020.03.09.)
 
+```q
+`::[(":localhost:5000:username:password";5000);"2+3"]
+```
+
+`":host:port"` can also be a symbol as `` `:host:port``.
 
 ----
 :fontawesome-solid-book:
@@ -189,5 +200,5 @@ It is more efficient to keep a connection open if there is an opportunity to re-
 [SSL/TLS](../kb/ssl.md)
 <br>
 :fontawesome-solid-street-view:
-_Q for mortals_
+_Q for Mortals_
 [§11.6.2 Opening a Connection Handle](/q4m3/11_IO/#1162-opening-a-connection-handle)
