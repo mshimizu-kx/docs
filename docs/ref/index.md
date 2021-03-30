@@ -103,10 +103,10 @@ keywords: card, index, kdb+, keywords, operators, q, reference
 ## Other
 
 <div markdown="1" class="typewriter">
-[`   pop stack](../basics/debug.md#debugging)        [:](overloads.md#colon)    [assign](../ref/assign.md)         [0      console](../basics/files.md)     [0:  File Text](file-text.md)
-[.](overloads.md#dot)   [push stack](../basics/debug.md#debugging)       [::](overloads.md#colon-colon)   [identity](identity.md)       [1, -1  stdout](../basics/files.md)      [1:  File Binary](file-binary.md)
-[\x  system cmd](../basics/syscmds.md)            [generic null](identity.md)   [2, -2  stderr](../basics/files.md)      [2:  Dynamic Load](dynamic-load.md)
-[\\   abort](../basics/debug.md#abort)                 [global amend](../basics/function-notation.md#name-scope)   [_n, -n_  handle](../basics/files.md)
+[`   pop stack](../basics/debug.md#debugging)        [:](overloads.md#colon)    [assign](../ref/assign.md)         [0      console](../basics/handles.md)     [0:  File Text](file-text.md)
+[.](overloads.md#dot)   [push stack](../basics/debug.md#debugging)       [::](overloads.md#colon-colon)   [identity](identity.md)       [1, -1  stdout](../basics/handles.md)      [1:  File Binary](file-binary.md)
+[\x  system cmd](../basics/syscmds.md)            [generic null](identity.md)   [2, -2  stderr](../basics/handles.md)      [2:  Dynamic Load](dynamic-load.md)
+[\\   abort](../basics/debug.md#abort)                 [global amend](../basics/function-notation.md#name-scope)   [_n, -n_  handle](../basics/handles.md)
 \\\\  quit q                [set view](../learn/views.md)
 
 ()     [precedence](../basics/syntax.md#precedence-and-order-of-evaluation)    \[;\]  [expn block](../basics/syntax.md#conditional-evaluation-and-control-statements)     {}  [lambda](../basics/function-notation.md)         \`   symbol
@@ -134,7 +134,7 @@ keywords: card, index, kdb+, keywords, operators, q, reference
 <tr markdown="1"><td markdown="1">[file](../basics/cmdline.md#file)</td></tr>
 <tr markdown="1"><td markdown="1">[`\a`](../basics/syscmds.md#a-tables)</td><td markdown="1">tables</td><td markdown="1">[`\r`](../basics/syscmds.md#r-rename)</td><td markdown="1">rename</td></tr>
 <tr markdown="1"><td markdown="1">[`-b`](../basics/cmdline.md#-b-blocked)</td><td markdown="1">blocked</td><td markdown="1">[`-s`](../basics/cmdline.md#-s-secondary-processes) [`\s`](../basics/syscmds.md#s-number-of-secondary-processes)</td><td markdown="1">secondary processes</td></tr>
-<tr markdown="1"><td markdown="1">[`\b`](../basics/syscmds.md#b-views) [`\B`](../basics/syscmds.md#b-pending-views)</td><td markdown="1">views</td><td markdown="1">[`\S`](../basics/syscmds.md#s-random-seed)</td><td markdown="1">random seed</td></tr>
+<tr markdown="1"><td markdown="1">[`\b`](../basics/syscmds.md#b-views) [`\B`](../basics/syscmds.md#b-pending-views)</td><td markdown="1">views</td><td markdown="1">[`-s`](../basics/cmdline.md#-s-random-seed) [`\S`](../basics/syscmds.md#s-random-seed)</td><td markdown="1">random seed</td></tr>
 <tr markdown="1"><td markdown="1">[`-c`](../basics/cmdline.md#-c-console-size) [`\c`](../basics/syscmds.md#c-console-size)</td><td markdown="1">console size</td><td markdown="1">[`-t`](../basics/cmdline.md#-t-timer-ticks) [`\t`](../basics/syscmds.md#t-timer)</td><td markdown="1">timer ticks</td></tr>
 <tr markdown="1"><td markdown="1">[`-C`](../basics/cmdline.md#-c-http-size) [`\C`](../basics/syscmds.md#c-http-size)</td><td markdown="1">HTTP size</td><td markdown="1">[`\ts`](../basics/syscmds.md#ts-time-and-space)</td><td markdown="1">time and space</td></tr>
 <tr markdown="1"><td markdown="1">[`\cd`](../basics/syscmds.md#cd-change-directory)</td><td markdown="1">change directory</td><td markdown="1">[`-T`](../basics/cmdline.md#-t-timeout) [`\T`](../basics/syscmds.md#t-timeout)</td><td markdown="1">timeout</td></tr>
