@@ -20,24 +20,25 @@ Using this method means data is not passed between remote processes.
 
 The library has five methods:
 
-```txt
+<div markdown="1" class="typewriter">
+
   //Connection
-  .r.open:            Initialise embedR. Optional to call. Allows to set verbose mode as Ropen 1
-  .r.close:           Close internal R connection
+  [.r.open](#ropen):            Initialise embedR. Optional to call. Allows to set verbose mode as Ropen 1
+  [.r.close](#rclose):           Close internal R connection
 
   //Execution
-  .r.exec:            Run an R command, do not return a result
-  .r.get:             Run an R command, return the result to q
-  .r.set:             Set a variable in the R memory space
+  [.r.exec](#rexec):            Run an R command, do not return a result
+  [.r.get](#rget):             Run an R command, return the result to q
+  [.r.set](#rset):             Set a variable in the R memory space
 
   //Graphic
-  .r.dev              Open plot window with noRStudioGD=TRUE (Normally R will open a new device automatically)
-  .r.off              Close plot window
+  [.r.dev](#rdev)              Open plot window with noRStudioGD=TRUE (Normally R will open a new device automatically)
+  [.r.off](#roff)              Close plot window
 
   //Utility
-  .r.install          Install package in embeded R process over the connection
+  [.r.install](#rinstall)          Install package in embeded R process over the connection
 
-```
+</div>
 
 ### Connection
 
